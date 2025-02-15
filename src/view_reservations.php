@@ -10,7 +10,7 @@ include '../app/db.php';
 
 if (isset($_POST['cancel_reservation'])) {
     $reservation_id = (int)$_POST['reservation_id'];
-    $sql = "DELETE FROM Rezervare WHERE id = $reservation_id AND id_client = " . $_SESSION['user_id'];
+    $sql = "DELETE FROM rezervare WHERE id = $reservation_id AND id_client = " . $_SESSION['user_id'];
     
     if ($conn->query($sql) === TRUE) {
         echo "Reservation cancelled successfully!";
@@ -22,9 +22,9 @@ if (isset($_POST['cancel_reservation'])) {
 $user_id = $_SESSION['user_id'];
 $sql = "
     SELECT r.id, r.data_inceput, r.durata, r.observatii, c.numar_camera, t.nume 
-    FROM Rezervare r 
-    JOIN Camera c ON r.id_camera = c.id 
-    JOIN Tip_camera t ON c.tip = t.id 
+    FROM rezervare r 
+    JOIN camera c ON r.id_camera = c.id 
+    JOIN tip_camera t ON c.tip = t.id 
     WHERE r.id_client = $user_id 
     ORDER BY r.data_inceput DESC";
 $result = $conn->query($sql);
