@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 80vh;
+}
+
+.reservations-table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #000;
+}
+
+.reservations-table th, .reservations-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.reservations-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.reservations-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.reservations-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.cancel-button:hover {
+    background-color: #e53935;
+}
+
+.cancel-button:active {
+    background-color: #d32f2f;
+}
